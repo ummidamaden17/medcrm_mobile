@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "881735821754",
+    "project_id": "medcrm-56845",
+    "storage_bucket": "medcrm-56845.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881735821754:android:7a4f4983d3a788b3505583",
+        "android_client_info": {
+          "package_name": "com.example.medcrm_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpFciJVRgKZT_kGzEQ9ogSFdg8n6Dz76U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
