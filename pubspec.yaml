@@ -84,6 +84,9 @@ flutter:
     - assets/icons/add.svg
     - assets/icons/delete.svg
     - assets/icons/filter.svg
+    - assets/icons/left_arrow.svg
+    - assets/icons/right_arrow.svg
+    - assets/icons/password.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
