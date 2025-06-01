@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/custom_drawer.dart';
-import '../widgets/custom_top_bar.dart';
+import 'package:medcrm_mobile/ui/screens/menu_sections/employess/employee_list.dart';
 
 void main() => runApp(MedCRMApp());
 
@@ -20,10 +18,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
-      body: Column(
-        children: [Builder(builder: (context) => customTopBar(context))],
-      ),
+      body: Column(children: [Expanded(child: EmployeeListPage())]),
     );
   }
 }

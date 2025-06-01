@@ -17,7 +17,6 @@ class ProfileAccountSetting extends StatelessWidget {
       drawer: CustomDrawer(),
       body: Column(
         children: [
-          // FIXED: Proper context for Scaffold.of(context).openDrawer()
           Builder(builder: (context) => customTopBar(context)),
           const SizedBox(height: 10),
           _buildBreadcrumb(),

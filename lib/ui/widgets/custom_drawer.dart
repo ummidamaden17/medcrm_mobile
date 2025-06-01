@@ -224,22 +224,27 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _buildMenuItem(
               iconPath: 'assets/icons/patients.svg',
               label: 'Пациенты',
-              subItems: [],
+              subItems: ['Список', 'Приемы'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/finance.svg',
               label: 'Финанс',
-              subItems: [],
+              subItems: ['Справочник услуг', 'Касса', 'История услуг'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/expenses.svg',
               label: 'Расходы',
-              subItems: [],
+              subItems: ['Список расходов', 'Категория расходов'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/reports.svg',
               label: 'Отчеты',
-              subItems: [],
+              subItems: [
+                'Отчеты по кассе',
+                'Отчеты по расходам',
+                'История последних\nотчетов',
+                'Годовые отчеты',
+              ],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/settings.svg',
@@ -255,23 +260,23 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget _getPageForLabel(String label) {
     switch (label) {
       case 'Сотрудники':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Список сотрудников':
         return EmployeeListPage();
       case 'Роли':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Разрешения':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Отделы':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Пациенты':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Финанс':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Расходы':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Отчеты':
-        return SettingsScreen();
+        return EmployeeListPage();
       case 'Настройки':
         return SettingsScreen();
       default:

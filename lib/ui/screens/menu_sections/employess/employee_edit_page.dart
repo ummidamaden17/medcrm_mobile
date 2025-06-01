@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medcrm_mobile/ui/screens/menu_sections/employess/modals/cancel_employee_modal.dart';
+import 'package:medcrm_mobile/ui/screens/menu_sections/employess/modals/save_employee_modal.dart';
 
 import '../../../widgets/custom_buttons.dart';
 import '../../../widgets/custom_drawer.dart';
@@ -179,9 +181,16 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
                         ),
                         const SizedBox(height: 24),
                         CustomActionButtons(
-                          onCancel: () => Navigator.pop(context),
-                          onSave: () => print("Save pressed"),
+                          onCancel: () {
+                            cancelEmployeeModal(context);
+                            print("Cancel pressed");
+                          },
+                          onSave: () {
+                            saveEmployeeDialog(context);
+                            print("Save pressed");
+                          },
                         ),
+                        const SizedBox(height: 10),
                       ],
                     ),
                   ),

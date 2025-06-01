@@ -5,6 +5,7 @@ import 'package:medcrm_mobile/ui/widgets/custom_drawer.dart';
 
 import '../../../widgets/custom_top_bar.dart';
 import 'employee_edit_page.dart';
+import 'modals/employee_delete_modal.dart';
 
 class EmployeeListPage extends StatefulWidget {
   const EmployeeListPage({Key? key}) : super(key: key);
@@ -63,7 +64,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                     ),
                   ),
                   TextSpan(
-                    text: 'Настройки',
+                    text: 'Список сотрудников',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -253,58 +254,21 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                   onPressed:
                                       checked.contains(true)
                                           ? () {
-                                            showDialog(
-                                              context: context,
-                                              builder:
-                                                  (context) => AlertDialog(
-                                                    title: Text(
-                                                      'Удалить сотрудника',
-                                                    ),
-                                                    content: Text(
-                                                      'Вы уверены, что хотите удалить выбранных сотрудников?',
-                                                    ),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed:
-                                                            () =>
-                                                                Navigator.of(
-                                                                  context,
-                                                                ).pop(),
-                                                        child: Text('Отмена'),
-                                                      ),
-                                                      TextButton(
-                                                        onPressed: () {
-                                                          setState(() {
-                                                            for (
-                                                              int i =
-                                                                  checked
-                                                                      .length -
-                                                                  1;
-                                                              i >= 0;
-                                                              i--
-                                                            ) {
-                                                              if (checked[i]) {
-                                                                employees
-                                                                    .removeAt(
-                                                                      i,
-                                                                    );
-                                                                checked
-                                                                    .removeAt(
-                                                                      i,
-                                                                    );
-                                                              }
-                                                            }
-                                                            selectAll = false;
-                                                          });
-                                                          Navigator.of(
-                                                            context,
-                                                          ).pop();
-                                                        },
-                                                        child: Text('Удалить'),
-                                                      ),
-                                                    ],
-                                                  ),
-                                            );
+                                            employeeDeleteModal(context, () {
+                                              setState(() {
+                                                for (
+                                                  int i = checked.length - 1;
+                                                  i >= 0;
+                                                  i--
+                                                ) {
+                                                  if (checked[i]) {
+                                                    employees.removeAt(i);
+                                                    checked.removeAt(i);
+                                                  }
+                                                }
+                                                selectAll = false;
+                                              });
+                                            });
                                           }
                                           : null,
                                   icon: SvgPicture.asset(
@@ -546,8 +510,8 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                 height: 20,
                                 color:
                                     currentPage < totalPages
-                                        ? Color(0xff6B7280)
-                                        : Color(0xffD1D5DB),
+                                        ? Color(0xffD1D5DB)
+                                        : Color(0xff6B7280),
                               ),
                             ),
                           ),
@@ -614,8 +578,8 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                 height: 20,
                                 color:
                                     currentPage > 1
-                                        ? Color(0xff6B7280)
-                                        : Color(0xffD1D5DB),
+                                        ? Color(0xffD1D5DB)
+                                        : Color(0xff6B7280),
                               ),
                             ),
                           ),
