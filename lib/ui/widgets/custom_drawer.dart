@@ -271,9 +271,17 @@ class _CustomDrawerState extends State<CustomDrawer> {
         return EmployeeListPage();
       case 'Пациенты':
         return EmployeeListPage();
-      case 'Финанс':
+      case 'Список':
         return EmployeeListPage();
-      case 'Расходы':
+      case 'Приемы':
+        return EmployeeListPage();
+      case 'Пациенты':
+        return EmployeeListPage();
+      case 'Справочник услуг':
+        return EmployeeListPage();
+      case 'Касса':
+        return EmployeeListPage();
+      case 'История услуг':
         return EmployeeListPage();
       case 'Отчеты':
         return EmployeeListPage();
