@@ -58,7 +58,10 @@ void cancelEmployeeModal(BuildContext context) {
                   print("Cancel pressed");
                 },
                 onSave: () {
-                  MaterialPageRoute(builder: (context) => EmployeeListPage());
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EmployeeListPage()),
+                  );
                   print("Save pressed");
                 },
                 saveButtonText: 'Выйти',

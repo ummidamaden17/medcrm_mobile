@@ -9,6 +9,7 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final phoneController = TextEditingController();
     final passwordController = TextEditingController();
+    final emailController = TextEditingController();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -146,7 +147,7 @@ class SignInScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 60,
                   child: TextField(
-                    controller: phoneController,
+                    controller: emailController,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       hintText: 'Напишите электронную почту',

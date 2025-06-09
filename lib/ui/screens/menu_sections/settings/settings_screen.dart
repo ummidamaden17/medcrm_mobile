@@ -20,37 +20,14 @@ class SettingsScreen extends StatelessWidget {
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16.0),
               child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'Главная / ',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                                color: Color(0xff6B7280),
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'Настройки',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Color(0xff0987EC),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    Container(
-                      width: 460,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final width =
+                        constraints.maxWidth < 480
+                            ? constraints.maxWidth
+                            : 460.0;
+                    return Container(
+                      width: width,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade300),
                         borderRadius: BorderRadius.circular(12),
@@ -107,8 +84,8 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
             ),

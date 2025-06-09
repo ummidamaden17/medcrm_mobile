@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medcrm_mobile/ui/screens/home_screen.dart';
+import 'package:medcrm_mobile/ui/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.interTextTheme()),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

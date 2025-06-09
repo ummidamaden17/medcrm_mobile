@@ -15,8 +15,8 @@ class CustomActionButtons extends StatelessWidget {
     required this.onSave,
     this.saveButtonColor,
     this.cancelButtonColor,
-    this.cancelButtonText = 'Отменить', // default text
-    this.saveButtonText = 'Сохранить', // default text
+    this.cancelButtonText = 'Отменить',
+    this.saveButtonText = 'Сохранить',
   }) : super(key: key);
 
   @override

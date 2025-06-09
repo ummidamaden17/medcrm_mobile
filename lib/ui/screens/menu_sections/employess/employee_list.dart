@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medcrm_mobile/ui/widgets/custom_drawer.dart';
 
 import '../../../widgets/custom_top_bar.dart';
+import 'employee_add_screen.dart';
 import 'employee_edit_page.dart';
 import 'modals/employee_delete_modal.dart';
 
@@ -189,7 +190,15 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                   width: 40,
                                   height: 40,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder:
+                                              (context) => EmployeeAddScreen(),
+                                        ),
+                                      );
+                                    },
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(

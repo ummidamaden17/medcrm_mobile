@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../widgets/custom_buttons.dart';
+import '../employee_list.dart';
 
 void saveEmployeeDialog(BuildContext context) {
   showDialog(
@@ -54,7 +55,10 @@ void saveEmployeeDialog(BuildContext context) {
                   print("Cancel pressed");
                 },
                 onSave: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EmployeeListPage()),
+                  );
                   print("Save pressed");
                 },
                 cancelButtonColor: Color(0xffF3F4F6),

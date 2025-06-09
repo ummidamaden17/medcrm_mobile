@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../screens/login_screen.dart';
 import '../screens/profile/profile_account_setting.dart';
 
 class CustomProfileDropdown extends StatefulWidget {
@@ -110,7 +111,6 @@ class _CustomProfileDropdownState extends State<CustomProfileDropdown> {
                       'assets/icons/user.svg',
                       'Посмотреть профиль',
                       () {
-                        // Open profile page or do something
                         print('Посмотреть профиль');
                       },
                     ),
@@ -134,8 +134,10 @@ class _CustomProfileDropdownState extends State<CustomProfileDropdown> {
                       height: 20,
                     ),
                     _buildDropdownItem('assets/icons/logout.svg', 'Выйти', () {
-                      // Handle logout
-                      print('Выход выполнен');
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (_) => LoginScreen()),
+                        (route) => false,
+                      );
                     }),
                   ],
                 ),
@@ -163,12 +165,10 @@ class _CustomProfileDropdownState extends State<CustomProfileDropdown> {
         child: Container(
           decoration: BoxDecoration(
             color: isHovered ? const Color(0xFFF5F5F5) : Colors.transparent,
-            borderRadius: BorderRadius.circular(8), // 👈 Rounded corners
+            borderRadius: BorderRadius.circular(8),
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          margin: const EdgeInsets.symmetric(
-            horizontal: 8,
-          ), // Optional: spacing
+          margin: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(
             children: [
               SvgPicture.asset(

@@ -2,7 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../screens/menu_sections/employess/employee_branches_screen.dart';
 import '../screens/menu_sections/employess/employee_list.dart';
+import '../screens/menu_sections/employess/employee_permission_screen.dart';
+import '../screens/menu_sections/employess/employee_role_screen.dart';
+import '../screens/menu_sections/expences/expence_category_screen.dart';
+import '../screens/menu_sections/expences/expences_list_screen.dart';
+import '../screens/menu_sections/finance/service_directory_screen.dart';
+import '../screens/menu_sections/finance/service_history_screen.dart';
+import '../screens/menu_sections/patients/patient_appointments_screen.dart';
+import '../screens/menu_sections/patients/patients_list_screen.dart';
+import '../screens/menu_sections/reports/cash_reports_screen.dart';
+import '../screens/menu_sections/reports/expence_reports_screen.dart';
 import '../screens/menu_sections/settings/settings_screen.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -219,7 +230,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _buildMenuItem(
               iconPath: 'assets/icons/employee.svg',
               label: 'Сотрудники',
-              subItems: ['Список сотрудников', 'Роли', 'Разрешения', 'Отделы'],
+              subItems: ['Список сотрудников', 'Роли', 'Разрешения', 'Филиалы'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/patients.svg',
@@ -229,7 +240,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _buildMenuItem(
               iconPath: 'assets/icons/finance.svg',
               label: 'Финанс',
-              subItems: ['Справочник услуг', 'Касса', 'История услуг'],
+              subItems: ['Справочник услуг', 'История услуг'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/expenses.svg',
@@ -239,12 +250,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _buildMenuItem(
               iconPath: 'assets/icons/reports.svg',
               label: 'Отчеты',
-              subItems: [
-                'Отчеты по кассе',
-                'Отчеты по расходам',
-                'История последних\nотчетов',
-                'Годовые отчеты',
-              ],
+              subItems: ['Отчеты по кассе', 'Отчеты по расходам'],
             ),
             _buildMenuItem(
               iconPath: 'assets/icons/settings.svg',
@@ -264,27 +270,35 @@ class _CustomDrawerState extends State<CustomDrawer> {
       case 'Список сотрудников':
         return EmployeeListPage();
       case 'Роли':
-        return EmployeeListPage();
+        return EmployeeRoleScreen();
       case 'Разрешения':
-        return EmployeeListPage();
-      case 'Отделы':
-        return EmployeeListPage();
+        return EmployeePermissionScreen();
+      case 'Филиалы':
+        return EmployeeBranchesScreen();
       case 'Пациенты':
-        return EmployeeListPage();
+        return PatientsListScreen();
       case 'Список':
-        return EmployeeListPage();
+        return PatientsListScreen();
       case 'Приемы':
-        return EmployeeListPage();
-      case 'Пациенты':
-        return EmployeeListPage();
+        return PatientAppointmentsScreen();
+      case 'Финанс':
+        return ServiceDirectoryScreen();
       case 'Справочник услуг':
-        return EmployeeListPage();
-      case 'Касса':
-        return EmployeeListPage();
+        return ServiceDirectoryScreen();
       case 'История услуг':
-        return EmployeeListPage();
+        return ServiceHistoryScreen();
+      case 'Расходы':
+        return ExpencesListScreen();
+      case 'Список расходов':
+        return ExpencesListScreen();
+      case 'Категория расходов':
+        return ExpenceCategoryScreen();
       case 'Отчеты':
-        return EmployeeListPage();
+        return CashReportsScreen();
+      case 'Отчеты по кассе':
+        return CashReportsScreen();
+      case 'Отчеты по расходам':
+        return ExpenceReportsScreen();
       case 'Настройки':
         return SettingsScreen();
       default:

@@ -55,7 +55,7 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
                           ),
                         ),
                         TextSpan(
-                          text: 'Настройки',
+                          text: 'Редактирование сотрудника',
                           style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
@@ -187,6 +187,7 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
                           },
                           onSave: () {
                             saveEmployeeDialog(context);
+
                             print("Save pressed");
                           },
                         ),

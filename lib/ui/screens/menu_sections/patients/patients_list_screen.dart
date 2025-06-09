@@ -4,21 +4,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medcrm_mobile/ui/widgets/custom_drawer.dart';
 
 import '../../../widgets/custom_top_bar.dart';
+import '../employess/employee_add_screen.dart';
 import '../employess/employee_edit_page.dart';
 import '../employess/modals/employee_delete_modal.dart';
 
-class EmployeeListPage extends StatefulWidget {
-  const EmployeeListPage({Key? key}) : super(key: key);
+class PatientsListScreen extends StatefulWidget {
+  const PatientsListScreen({Key? key}) : super(key: key);
 
   @override
-  State<EmployeeListPage> createState() => _EmployeeListPageState();
+  State<PatientsListScreen> createState() => _PatientsListScreenState();
 }
 
-class _EmployeeListPageState extends State<EmployeeListPage> {
+class _PatientsListScreenState extends State<PatientsListScreen> {
   int currentPage = 1;
   int itemsPerPage = 10;
   List<bool> checked = List.generate(18, (_) => false);
-  final List<String> employees = List.generate(18, (_) => 'Айдана');
+  final List<String> employees = List.generate(18, (_) => '0000');
   bool selectAll = false;
   bool showSearch = false;
   final TextEditingController searchController = TextEditingController();
@@ -64,7 +65,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                     ),
                   ),
                   TextSpan(
-                    text: 'Список сотрудников',
+                    text: 'Список пациентов',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -189,7 +190,15 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                   width: 40,
                                   height: 40,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder:
+                                              (context) => EmployeeAddScreen(),
+                                        ),
+                                      );
+                                    },
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
@@ -337,7 +346,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                               child: Row(
                                 children: [
                                   Text(
-                                    'ФИО',
+                                    'ID',
                                     style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
@@ -357,7 +366,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                               child: Row(
                                 children: [
                                   Text(
-                                    'РОЛИ',
+                                    'ФИО',
                                     style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
@@ -461,7 +470,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
                                             horizontal: 4.0,
                                           ),
                                           child: Text(
-                                            'Админ',
+                                            'Айтбай Азина Нұрж.',
                                             style: GoogleFonts.inter(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w400,
